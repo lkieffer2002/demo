@@ -46,7 +46,7 @@ CLASS Form1 INHERITS Form:
         /*  */
         /* radButton1 */
         /*  */
-        THIS-OBJECT:radButton1:Location = NEW System.Drawing.Point(157, 30).
+        THIS-OBJECT:radButton1:Location = NEW System.Drawing.Point(257, 209).
         THIS-OBJECT:radButton1:Name = "radButton1".
         THIS-OBJECT:radButton1:Size = NEW System.Drawing.Size(137, 30).
         THIS-OBJECT:radButton1:TabIndex = 0.
