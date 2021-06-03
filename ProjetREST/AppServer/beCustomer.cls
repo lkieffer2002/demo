@@ -25,6 +25,7 @@ CLASS beCustomer INHERITS BusinessEntity:
     {"becustomer.i"}
     
     DEFINE DATA-SOURCE srcCustomer FOR SP2.Customer.
+    DEFINE VARIABLE myVar AS INTEGER.
     
     
     /*------------------------------------------------------------------------------

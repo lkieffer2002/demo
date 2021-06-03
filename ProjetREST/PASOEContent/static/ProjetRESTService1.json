@@ -1,6 +1,6 @@
 {
     "version": "1.4",
-    "lastModified": "Thu Jun 03 08:51:00 CEST 2021",
+    "lastModified": "Thu Jun 03 08:54:12 CEST 2021",
     "services": [{
         "name": "ProjetRESTService1",
         "address": "\/rest\/ProjetRESTService1",
