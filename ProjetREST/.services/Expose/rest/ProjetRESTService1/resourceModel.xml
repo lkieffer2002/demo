@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<prgs:model xmlns:prgs="http://www.progress.com/caf/camel/component/prgrs" id="resourceModel">
+  <prgs:resource consumes="application/json" name="beCustomer" path="/beCustomer" produces="application/json">
+    <prgs:operation consumes="application/json" idls="ProjetREST/.services/AppServer/beCustomer.pidl::com.progress.openedge.pdt.bpmbindings" name="beCustomer..CreatebeCustomer" path="" produces="application/json" verb="POST"/>
+    <prgs:operation consumes="application/json" idls="ProjetREST/.services/AppServer/beCustomer.pidl::com.progress.openedge.pdt.bpmbindings" name="beCustomer..DeletebeCustomer" path="" produces="application/json" verb="DELETE"/>
+    <prgs:operation consumes="application/json" idls="ProjetREST/.services/AppServer/beCustomer.pidl::com.progress.openedge.pdt.bpmbindings" name="beCustomer..ReadbeCustomer" path="" produces="application/json" verb="GET">
+      <prgs:param name="filter" type="QUERY"/>
+    </prgs:operation>
+    <prgs:operation consumes="application/json" idls="ProjetREST/.services/AppServer/beCustomer.pidl::com.progress.openedge.pdt.bpmbindings" name="beCustomer..UpdatebeCustomer" path="" produces="application/json" verb="PUT"/>
+  </prgs:resource>
+</prgs:model>

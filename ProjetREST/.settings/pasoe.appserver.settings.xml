@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<module-content version="12.3">
+    <module id="34a0ee1d-d87b-4595-a7b9-3535f7f58bf3" name="ProjetREST">
+        <resource path="AppServer" publish="true"/>
+    </module>
+</module-content>
