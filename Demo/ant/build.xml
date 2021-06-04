@@ -40,7 +40,19 @@
 <!-- Target for defining 'ablunit' -->
 <target name="ablunit" depends="taskdef" description="runs unit tests">
 	<mkdir dir="Results"/>
-
+    <ablunit dlc="${DLC_HOME}" environment="gui" printsummary="true" haltonerror="false" haltonfailure="false" tempdir="${basedir}/tmpdir">     
+    <batchtest todir="Results">
+        <fileset dir="tests" includes="**/*.p" />
+           <fileset dir="tests" includes="**/*.cls" />
+    </batchtest>
+    <propath>
+        <pathelement path="src" />  
+        <pathelement path="tests" />        
+        <!-- When running on OE up to 11.3, don't forget to include ablunit.pl and OpenEdge.Core.pl in your propath-->
+        <pathelement location="C:/Progress/OpenEdge123/gui/ablunit.pl" />
+        <pathelement location="C:/Progress/OpenEdge123/gui/OpenEdge.Core.pl" /> 
+    </propath>
+    </ablunit>  
 </target>
 
 <!-- Target for generating library -->
