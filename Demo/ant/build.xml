@@ -3,7 +3,7 @@
 
 <property environment="env" />
 <property file="./ant/build.properties"/>  
-<property name="PROJECTHOME" value="C:/Progress/OpenEdge/oeide/eclipse/plugins/com.progress.openedge.pdt.abldoc.core_11.7.3.00"/>	
+<property name="PROJECTHOME" value="C:/Progress/OpenEdge/oeide/eclipse/plugins/com.progress.openedge.pdt.abldoc.core_12.3.0.00"/>	
 	<taskdef resource="PCT.properties"/> 
 <!-- Target for defining 'taskdef' -->
 <target name="taskdef">	
@@ -26,7 +26,7 @@
 
 <!--  <PCTCompile destDir="build" dlcHome="${env.DLC}"> -->
   <PCTCompile destDir="build" dlcHome="${DLC_HOME}">
-  	<PCTConnection dbName="sports2000" singleUser="false" dbPort="2222" HostName="localhost" LogicalName="sports2000" />
+  	<PCTConnection dbName="SP2" singleUser="false" dbPort="2013" HostName="localhost" LogicalName="sports2000" />
   	<propath>
   	    <pathelement path="src"/>
   	  </propath>
@@ -49,8 +49,8 @@
 	    <pathelement path="src" />	
 		<pathelement path="tests" />        
 	    <!-- When running on OE up to 11.3, don't forget to include ablunit.pl and OpenEdge.Core.pl in your propath-->
-	    <pathelement location="C:\Progress\OpenEdge\gui\ablunit.pl" />
-	    <pathelement location="C:\Progress\OpenEdge\gui\OpenEdge.Core.pl" /> 
+	    <pathelement location="C:\Progress\OpenEdge123\gui\ablunit.pl" />
+	    <pathelement location="C:\Progress\OpenEdge123\gui\OpenEdge.Core.pl" /> 
 	</propath>
 	</ablunit>	
 </target>
@@ -78,7 +78,7 @@
 <!-- Main target starts here -->
 
 <target name="main" depends="taskdef">
-<ablunit dlc="C:\Progress\OpenEdge" environment="gui" printsummary="true" haltonerror="no" haltonfailure="no" tempdir="${basedir}/tmpdir">
+<ablunit dlc="C:\Progress\OpenEdge123" environment="gui" printsummary="true" haltonerror="no" haltonfailure="no" tempdir="${basedir}/tmpdir">
 <test name="${basedir}/tests/TestFact.p" todir="${basedir}/results" outfile="result-TestClass1-gui" format="xml" />
 	<propath>
 	        <pathelement path="src" />  
