@@ -1,0 +1,1 @@
+PROPATH=C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN\src;C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN\tests;C:\Progress\OpenEdge\gui\ablunit.pl;C:\Progress\OpenEdge\gui\OpenEdge.Core.pl

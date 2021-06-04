@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="CI_OE" default="build" basedir="..">
+
+<property environment="env" />
+<property file="ant/build.properties"/>  
+<property name="PROJECTHOME" value="C:/Progress/OpenEdge/oeide/eclipse/plugins/com.progress.openedge.pdt.abldoc.core_${version}"/>	
+	<taskdef resource="PCT.properties"/> 
+<!-- Target for defining 'taskdef' -->
+<target name="taskdef">	
+	
+	<taskdef name="ablunit" 
+		classname="com.progress.openedge.ant.ablunit.ABLUnitTask" 
+		classpath="${env.DLC}\java\ant-ablunit.jar" />
+	
+    <taskdef name="abldoc"
+         classname="com.progress.openedge.ant.abldoc.ABLDocTask"
+         classpath="${env.DLC}/java/ant-abldoc.jar;${lib.dir}">  
+    </taskdef>
+	
+</target>
+
+<!-- Target for defining 'build' -->
+<target name="build" description="Builds source files">
+  <mkdir dir="build"/>
+  <PCTCompile destDir="build" dlcHome="${env.DLC}">
+  	<propath>
+  	    <pathelement path="src"/>
+  	  </propath>
+    <fileset dir="src">
+      <include name="**/*.cls" />
+      <include name="*.p" />
+    </fileset>
+  </PCTCompile>
+</target>
+
+<!-- Target for defining 'ablunit' -->
+<target name="ablunit" depends="taskdef" description="runs unit tests">
+	<mkdir dir="Results"/>
+	<ablunit dlc="${env.DLC}" environment="gui" printsummary="true" haltonerror="no" haltonfailure="no" tempdir="${wrkdir}">		
+	<batchtest todir="Results">
+		<fileset dir="tests" includes="**/*.p" />
+		   <fileset dir="tests" includes="**/*.cls" />
+	</batchtest>
+	<propath>
+	    <pathelement path="src" />	
+		<pathelement path="tests" />        
+	    <!-- When running on OE up to 11.3, don't forget to include ablunit.pl and OpenEdge.Core.pl in your propath-->
+	    <pathelement location="C:\Progress\OpenEdge\gui\ablunit.pl" />
+	    <pathelement location="C:\Progress\OpenEdge\gui\OpenEdge.Core.pl" /> 
+	</propath>
+	</ablunit>	
+</target>
+
+<!-- Target for generating library -->
+<target name="library" description="Builds source files">
+	<PCTLibrary destfile="pdsoelib.pl" dlcHome="${DLC_HOME}">
+	  <fileset dir="build">
+	    <include name="**/*.r" />
+	    <exclude name="test/*" />
+	  </fileset>
+	</PCTLibrary>
+</target>
+	
+<!-- ABLDoc Target starts here -->
+<target name="abldoc" depends="taskdef">
+    <mkdir dir="Documentation"/> 
+    <abldoc dlc="${DLC_HOME}" destdir="Documentation" doctitle="ABLDoc Documentation"
+          verbose="no" includeExtension="i" artifactLoc="${PROJECTHOME}/abldoc-artifacts">                               
+          <abldocproject name="test" sourcepath="src" />                       
+    </abldoc>	
+</target>    
+</project>
+

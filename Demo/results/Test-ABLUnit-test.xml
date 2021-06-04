@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<testsuites errors="0" failures="1" name="ABLUnit" tests="2"><testsuite name="C:/Users/Administrator/Progress/Developer Studio 4.5.2/workspace1/ProjetSVN/tests/test.p" tests="2" time=".004"><testcase name="test1" status="Success" time=".002"/><testcase name="test2" status="Failure" time=".002"><failure message="Expected: 7 but was: 2">Equals OpenEdge.Core.Assert at line 90  (OpenEdge/Core/Assert.r)
+test2 C:/Users/Administrator/Progress/Developer Studio 4.5.2/workspace1/ProjetSVN/tests/test.p at line 38  (C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN\tests\test.r)
+RunTestProc OpenEdge.ABLUnit.Reflection.ProcedureAnnotationInfo at line 127  (OpenEdge/ABLUnit/Reflection/ProcedureAnnotationInfo.r)
+RunSelectedTestProc OpenEdge.ABLUnit.Reflection.ProcedureAnnotationInfo at line 154  (OpenEdge/ABLUnit/Reflection/ProcedureAnnotationInfo.r)
+runTestProcedure OpenEdge.ABLUnit.Runner.ABLRunner at line 1305  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+runtests OpenEdge.ABLUnit.Runner.ABLRunner at line 1182  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+runtests OpenEdge.ABLUnit.Runner.ABLRunner at line 1105  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+runtests OpenEdge.ABLUnit.Runner.ABLRunner at line 1212  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+runtests OpenEdge.ABLUnit.Runner.ABLRunner at line 1105  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+RunTests OpenEdge.ABLUnit.Runner.ABLRunner at line 152  (OpenEdge/ABLUnit/Runner/ABLRunner.r)
+ABLUnitCore.p at line 78  (ABLUnitCore.r)</failure></testcase></testsuite></testsuites>

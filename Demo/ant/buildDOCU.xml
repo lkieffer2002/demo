@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." default="main" name="ProjetSVN">
+         <!-- Properties used to configure the CLASSPATH and the default artifacts location -->
+		<property environment="env" />
+		<property file="./ant/build.properties"/>  
+      <property name="DLC_HOME" value="C:/Progress/OpenEdg"/><property name="version" value="11.7.3.00"/>
+      <property name="PROJECT_HOME" value="${DLC_HOME}/oeide/eclipse/plugins/com.progress.openedge.pdt.abldoc.core_${version}"/>
+      <property name="lib.dir" value="${PROJECT_HOME}/lib"/>
+      <property name="artifacts.dir" value="${PROJECT_HOME}/abldoc-artifacts"/>
+         <!-- Target for defining 'taskdef' -->
+	<target name="taskdef">
+        <taskdef name="abldoc" classpath="${DLC_HOME}/java/ant-abldoc.jar" classname="com.progress.openedge.ant.abldoc.ABLDocTask">
+
+	 
+       </taskdef>
+     </target>    
+         <!-- main task to generate the documentation -->
+     <target name="main" depends="taskdef">
+       <abldoc includeProtected="true" includePrivate="true" tagParser="com.progress.abldoc.CustomTagParser"
+         serializer="com.progress.abldoc.CustomSerializer" artifactLoc="${artifacts.dir}" includeExtension="i" verbose="yes" doctitle="ABLDoc Documentation"
+         destdir="${basedir}/docs" dlc="${DLC_HOME}">
+           <abldocproject name="sample-prj" sourcepath="C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN" propath="C:/abldoc/lib" location="C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN"/>
+          <abldocproject name="project 2" location="C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN\src">
+            <propath>
+               <pathelement location="C:/abldoc/lib/"/>
+             </propath>
+            <sourcepath>
+               <pathelement location="C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN\src"/>
+              <fileset dir="C:\Users\Administrator\Progress\Developer Studio 4.5.2\workspace1\ProjetSVN\src">
+                  <include name="**/*.cls"/>
+               </fileset>
+             </sourcepath>
+           </abldocproject>
+         </abldoc>
+       </target>
+      </project>

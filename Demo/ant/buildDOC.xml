@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="ProjetSVN" default="build" basedir="..">
+
+<property environment="env" />
+<property file="./ant/build.properties"/>  
+<property name="PROJECTHOME" value="C:/Progress/OpenEdge/oeide/eclipse/plugins/com.progress.openedge.pdt.abldoc.core_${version}"/>	
+	<taskdef resource="PCT.properties"/> 
+<!-- Target for defining 'taskdef' -->
+<target name="taskdef">	
+	
+	<taskdef name="ablunit" 
+		classname="com.progress.openedge.ant.ablunit.ABLUnitTask" 
+		classpath="${DLC_HOME}\java\ant-ablunit.jar" />
+	
+    <taskdef name="abldoc"
+         classname="com.progress.openedge.ant.abldoc.ABLDocTask"
+         classpath="${DLC_HOME}/java/ant-abldoc.jar;${lib.dir}">  
+    </taskdef>
+	
+</target>
+
+
+	
+<!-- ABLDoc Target starts here -->
+<target name="abldoc" depends="taskdef">
+    <mkdir dir="Documentation"/> 
+    <abldoc dlc="${DLC_HOME}" destdir="Documentation" doctitle="ABLDoc Documentation"
+          verbose="no" includeExtension="i" artifactLoc="${PROJECTHOME}/abldoc-artifacts">                               
+                               
+    </abldoc>   
+</target>    
+</project>
+
