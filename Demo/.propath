@@ -4,4 +4,6 @@
     <propathentry env="all" kind="dir" path="@{WORK}" platform="All"/>
     <propathentry env="gui" kind="con" path="com.openedge.pdt.text.GUI_LIBRARIES" platform="All"/>
     <propathentry env="all" kind="con" path="com.openedge.pdt.text.DLC_PATHS" platform="All"/>
+    <propathentry env="all" kind="dir" path="@{ROOT}\src" platform="All"/>
+    <propathentry env="all" kind="lib" path="C:\Progress\OpenEdge123\gui\ablunit.pl" platform="Windows"/>
 </propath>
