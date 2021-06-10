@@ -21,7 +21,7 @@ BLOCK-LEVEL ON ERROR UNDO, THROW.
 
 /* ***************************  Main Block  *************************** */
 MESSAGE "test"
-    VIEW-AS ALERT-BOX
+    VIEW-AS ALERT-BOX.
 MESSAGE "test2"
     VIEW-AS ALERT-BOX.
 MESSAGE "ok"
