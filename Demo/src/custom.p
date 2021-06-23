@@ -30,7 +30,7 @@ DEFINE VARIABLE test AS CHARACTER.
 test = "1".
 MESSAGE test
     VIEW-AS ALERT-BOX.
-FOR EACH customer NO-LOCK:
+FOR EACH customer  NO-LOCK:
     DISPLAY name.
 END.
     
